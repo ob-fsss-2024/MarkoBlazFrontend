@@ -1,7 +1,7 @@
 // app.component.ts
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { CocktailService } from './services/cocktail.service';
@@ -15,11 +15,10 @@ import { CocktailService } from './services/cocktail.service';
   providers: [CocktailService]
 })
 export class AppComponent implements OnInit {
-
-  constructor(private myService: CocktailService) { }
-
   drinks: any;
   searchQuery: string = '';
+
+  constructor(private myService: CocktailService) { }
 
   ngOnInit() {
     this.myService.getCocktail("Mojito").subscribe(data => this.drinks = data);
@@ -31,5 +30,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  title = 'application';
+  scrollToDrink(drinkId: string) {
+    const element = document.getElementById('drink-' + drinkId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
