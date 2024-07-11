@@ -21,12 +21,18 @@ export class AppComponent implements OnInit {
   constructor(private myService: CocktailService) { }
 
   ngOnInit() {
-    this.myService.getCocktail("Mojito").subscribe(data => this.drinks = data);
+    this.myService.getCocktail("Mojito").subscribe(data => {
+      this.drinks = data;
+      this.addFunFacts();
+    });
   }
 
   searchCocktail() {
     if (this.searchQuery.trim()) {
-      this.myService.getCocktail(this.searchQuery).subscribe(data => this.drinks = data);
+      this.myService.getCocktail(this.searchQuery).subscribe(data => {
+        this.drinks = data;
+        this.addFunFacts();
+      });
     }
   }
 
@@ -35,5 +41,13 @@ export class AppComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  addFunFacts() {
+    this.drinks.drinks.forEach((drink: any) => {
+      this.myService.getCocktailFunFact(drink.strDrink).subscribe(funFact => {
+        drink.funFact = funFact.funFact;
+      });
+    });
   }
 }

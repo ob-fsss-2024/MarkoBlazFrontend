@@ -48,6 +48,11 @@
           <li *ngIf="drink.strIngredient9">{{ drink.strIngredient9 }} - {{ drink.strMeasure9 }}</li>
         </ul>
       </div>
+  
+      <div class="cocktail-funfact">
+        <h3>Fun Fact:</h3>
+        <p *ngIf="drink.funFact">{{ drink.funFact }}</p>
+      </div>
     </div>
   </div>
   
@@ -144,6 +149,11 @@
   
     .cocktail-ingredients li {
       margin: 4px 0;
+    }
+  
+    .cocktail-funfact p {
+      margin: 4px 0;
+      font-style: italic;
     }
   </style>
   
