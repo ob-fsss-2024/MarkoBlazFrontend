@@ -1,4 +1,7 @@
-<!-- app.component.html -->
+<div class="navbar">
+  <h1>Cocktails</h1>
+</div> 
+
 <div class="search-container">
     <h1>Enter a Cocktail</h1>
     <div class="input-group">
@@ -37,20 +40,21 @@
               <li *ngIf="drink.strIngredient9">{{ drink.strIngredient9 }} - {{ drink.strMeasure9 }}</li>
             </ul>
           </div>
-  
-          <div class="cocktail-funfact">
-            <h3>Fun Fact:</h3>
-            <div *ngIf="drink.funFact" class="funfact-box">
-              <p>{{ drink.funFact }}</p>
-            </div>
+
+          <div class="cocktail-instructions">
+            <h3>Instructions:</h3>
+            <p>{{ drink.strInstructions }}</p>
           </div>
         </div>
-  
-        <div class="cocktail-instructions">
-          <h3>Instructions:</h3>
-          <p>{{ drink.strInstructions }}</p>
+          
         </div>
-      </div>
+  
+        <div class="cocktail-funfact">
+          <h3>Fun Fact:</h3>
+          <div *ngIf="drink.funFact" class="funfact-box">
+            <p>{{ drink.funFact }}</p>
+          </div>
+        </div>
   
       <div class="cocktail-details">
         <p><strong>Category:</strong> {{ drink.strCategory }}</p>
