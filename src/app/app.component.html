@@ -12,26 +12,26 @@
   <div *ngIf="drinks">
     <div class="cocktail-grid">
       <div *ngFor="let drink of drinks.drinks" class="cocktail-grid-item" (click)="scrollToDrink(drink.idDrink)">
-        <h2>{{ drink.strDrink }}</h2>
+        <h2 class="cocktail-title">{{ drink.strDrink }}</h2>
         <img [src]="drink.strDrinkThumb" alt="{{ drink.strDrink }}" class="cocktail-image-grid">
       </div>
     </div>
   
     <div *ngFor="let drink of drinks.drinks" class="cocktail-container" [id]="'drink-' + drink.idDrink">
-      <h2>{{ drink.strDrink }}</h2>
-      <img [src]="drink.strDrinkThumb" alt="{{ drink.strDrink }}" class="cocktail-image">
-      
-      <div class="cocktail-details">
-        <p><strong>Category:</strong> {{ drink.strCategory }}</p>
-        <p><strong>IBA:</strong> {{ drink.strIBA }}</p>
-        <p><strong>Alcoholic:</strong> {{ drink.strAlcoholic }}</p>
-        <p><strong>Glass:</strong> {{ drink.strGlass }}</p>
-        <p><strong>Tags:</strong> {{ drink.strTags }}</p>
+      <h2 class="cocktail-title">{{ drink.strDrink }}</h2>
+      <div class="cocktail-content">
+        <img [src]="drink.strDrinkThumb" alt="{{ drink.strDrink }}" class="cocktail-image">
+        
+        <div class="cocktail-instructions">
+          <h3>Instructions:</h3>
+          <p>{{ drink.strInstructions }}</p>
+        </div>
       </div>
   
-      <div class="cocktail-instructions">
-        <h3>Instructions:</h3>
-        <p>{{ drink.strInstructions }}</p>
+      <div class="cocktail-details">
+        <p><strong>Category:</strong> {{ drink.strCategory }}</p>
+        <p><strong>Alcoholic:</strong> {{ drink.strAlcoholic }}</p>
+        <p><strong>Glass:</strong> {{ drink.strGlass }}</p>
       </div>
   
       <div class="cocktail-ingredients">
@@ -114,6 +114,17 @@
       margin-bottom: 16px;
       border-radius: 8px;
       background-color: #f9f9f9;
+    }
+  
+    .cocktail-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  
+    .cocktail-title {
+      font-weight: bold;
+      text-transform: uppercase;
     }
   
     .cocktail-image {
