@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   constructor(private myService: CocktailService) { }
 
   ngOnInit() {
-    this.searchCocktail("Mojito"); // Optional initial search
+    this.searchCocktail("Margarita"); // Optional initial search
   }
 
   searchCocktail(query: string) {
