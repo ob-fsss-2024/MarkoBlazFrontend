@@ -1,10 +1,8 @@
-/* app.component.css */
-/* Import the modern and stylish font */
-/* Import the modern and stylish font */
 
 
 /* Apply the font globally */
 body {
+  font-family: 'Montserrat', sans-serif;
   height: 100vh; /* Full viewport height */
   margin: 0;
   padding: 0;
@@ -91,7 +89,6 @@ body {
   height: auto;
   border-radius: 8px;/* app.component.css */
   /* Import the modern and stylish font */
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
   
   /* Apply the font globally */
   body {
