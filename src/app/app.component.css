@@ -5,7 +5,11 @@
 /* Apply the font globally */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.5), rgba(0, 56, 140, 0.5));
+  background-image: url('/assets/images/coctails.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full viewport height */
   margin: 0;
   padding: 0;
 }
