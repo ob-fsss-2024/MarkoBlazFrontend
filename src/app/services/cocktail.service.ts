@@ -8,7 +8,7 @@ import { RecipeResponse } from '../types/recipeResponse';
   providedIn: 'root'
 })
 export class CocktailService {
-  private baseUrl = 'http://localhost:9090/coctails';
+  private baseUrl = 'https://markoblazbackend-backend.greenisland-0015b907.westeurope.azurecontainerapps.io/coctails';
 
   constructor(private http: HttpClient) {}
 
